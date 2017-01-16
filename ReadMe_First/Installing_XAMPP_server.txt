@@ -1,0 +1,58 @@
+Readme
+Required Windows 10
+
+1) Open up UAC(Used Account Settings)
+   and scroll down the bar to "Never notify me when:"
+
+2) Download XAMPP server  from https://sourceforge.net/projects/xampp/files/ or https://www.apachefriends.org/xampp-files/5.6.28/xampp-win32-5.6.28-1-VC11-installer.exe
+   Make sure XAMPP server is for php v5.6 or lower.
+   Install XAMPP server the default way. No need to check or uncheck options during installation.
+   Recommended location of installation 
+   C:\xampp
+   In case of Windows Security Alert, check the "Private networks, such as my home or work network" then click "Allow access"
+
+3) Go to C: drive
+   C:\xampp\apache\conf\extra
+   open up "httpd-ssl" in notepad or textpad
+   browse that file till you find "Listen 443"
+   change this "Listen 443" to "Listen 8181"
+   save that file.
+
+   Go to C:\xampp\apache\conf
+   open up "httpd" in notepad or textpad
+   browser that file till you find "Listen 12.34.56.78:80"
+				    Listen:80"
+   change this to "Listen 12.34.56.78:1234"
+		   Listen:1234"
+   Also change "ServerName localhost:80" to "ServerName localhost:1234"
+
+4) Go to XAMPP control panel and open up "Config" then go to "Service and Port Settings" and put "1234 in Main Port and "8181" in SSL Port, then click Save.
+
+5) Open up xampp-control again, hopefully no errors are shown up there except a warning "You are running with Administrator rights!".
+
+6) Type "cmd" in run window of windows 10 or just open up "Command Prompt" and run as administrator. 
+   type "C:\WINDOWS\system32\net user" ( please note: "net user" has a space in between)
+   and press enter
+   now type "C:\WINDOWS\system32\net user administrator /active:yes" 			(type exactly the way it is shown)    
+   now type "C:\WINDOWS\system32\net user administrator *"  (don't forget to include *)
+   choose a new password for administrator if necessary
+   
+7) Log out from the current user. Log in as Administrator then open xampp-control and hopefully that warning is gone.
+   Logging in as Administrator can bar you from using several Windows apps like Microsoft edge(I personally hate it :P) but one can fix it by going to "regedit.exe"
+   in regedit go to "HKEY_LOCAL_MACHINE then SOFTWARE then Microsoft then scroll down to Windows then CurrentVersion then scroll down to Policies then System and then find "FilterAdministratorToken" and change its "Value data:" to 1 and then go to UIPI and change its value data to 0x00000001(1)
+   Restart the PC.
+
+8) Go to C:\xampp\mysql\
+   and replace the "data" folder with the one given. It contains the mysql databases.
+
+9) Now go to C:\xampp
+   and replace "htdocs" folder with the one given. It contains php codes and JpGraph libraries.
+
+10) Now go to http:\\localhost:1234 and you shall see all the databases. If you cannot access any databases or encounter any problem, please feel free to ask me on mayazhussain@gmail.com or ayaz.hussain@tu-dortmund.de
+
+11) Go to XAMPP Control Panel, click Start button on Apache and MySQL services
+
+12) Now go to this link on Mozilla Firefox browser "http://localhost:1234/Graphs/accbarex1.php"(this link shall be used to download image in Augmented Reality App) and you shall see an accumulated bargraph.
+
+13) Now go to this link on Mozilla Firefox browser "http://localhost:1234/phpmyadmin/" and this will open mySQL database. Go to "elections" then go to "participants3" and click "edit" and change the value and the graph at "http://localhost:1234/Graphs/accbarex1.php" should change accordingly.
+   

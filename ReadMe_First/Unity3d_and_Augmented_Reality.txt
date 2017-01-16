@@ -1,0 +1,21 @@
+1) Install Unity3d (https://unity3d.com/get-unity/download) with Android SDK(https://docs.unity3d.com/Manual/android-sdksetup.html) along with other supporting softwares (like Visual C++ Redistributable etc)
+
+2) Install drivers for your Android device, this link can help "https://developer.android.com/studio/run/oem-usb.html"
+
+3) Open Unity3d and click "File" and go to build settings and select Android then go to "Player Settings"  then go to "Other Settings" and set "Minimum API Level" to Android 2.3.1 Gingerbread (API level 9) and check if "Bundle Identifier" name is set to "com.Company.ProductName". If it is " com.Company.ProductName", please change it to anything else.
+
+4) Unpack "testingimage2.rar" and go to "Assets" folder and open "TestingImageFinal" file in Unity3d.
+
+5) Connect your android device with your PC/Laptop using a USB Cable and install its USB drivers(if not installed already). Go to "File" in Unity3d and go to "Build and Run" or just press "Ctrl+B" to run "Testingimage" on your mobile device.
+
+6) Now on your laptop make XAMPP server by clicking Start button on Apache and MySQL services (for more informations check Installing XAMPP server Notepad file at step 11).
+
+7) Make sure your mobile device and PC/Laptop are connected on the same network.
+
+8) Run the application on your mobile device and it should show you a Pie Chart on the top left corner of the screen. 
+
+9) Try testing this application with provided QR Codes or go to this website "https://createqrcode.appspot.com/" and put "01" , "02" or "03" to obtain those QR codes.
+
+10) Now while running this application, you can Go to "elections" then go to "participants3" or "participants1" or "participants" and click "edit" and change the value and this should change the graph accordingly in Android App as well.
+
+In case of any difficulties or need more explaination please feel free to contact me on "mayazhussain@gmail.com" or ayaz.hussain@tu-dortmund.de 
